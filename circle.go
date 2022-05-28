@@ -7,6 +7,11 @@ type Circle struct {
 	Radius float64
 }
 
-func (c Circle) CalcPerimeter() float64 {
+func (c Circle) CalcArea() float64 {
 	return math.Pow(c.Radius, 2) * math.Pi
+}
+
+
+func (c Circle) CalcPerimeter() float64 {
+	return 2 * c.Radius * math.Pi
 }
