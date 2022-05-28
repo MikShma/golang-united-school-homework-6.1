@@ -41,7 +41,8 @@ func (b *box) ExtractByIndex(i int) (Shape, error) {
 	if err != nil {
 		return k, err
 	}
-	b.shapes = append( b.shapes[:i], b.shapes[i+1:]... ) 
+	b.shapes = append( b.shapes[:i], b.shapes[i+1:]... )
+	b.shapesCapacity--
 	return k, err
 }
 
