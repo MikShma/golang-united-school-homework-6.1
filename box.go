@@ -1,5 +1,6 @@
 package golang_united_school_homework
 
+import "errors"
 
 // box contains list of shapes and able to perform operations on them
 type box struct {
@@ -28,7 +29,7 @@ func (b *box) AddShape(shape Shape) error {
 // whether shape by index doesn't exist or index went out of the range, then it returns an error
 func (b *box) GetByIndex(i int) (Shape, error) {
 	if i > len(b.shapes) {
-		return Shape{},errors.New("shape by index doesn't exist or index went out of the range")
+		return nil, errors.New("shape by index doesn't exist or index went out of the range")
 	}
 	return b.shapes[i], nil
 }
@@ -82,7 +83,7 @@ func (b *box) RemoveAllCircles() error {
 		i = s
 		_, ok := i.(Circle)
 		if ok {
-			_, err = b.ExtractByIndex(k)
+			_, _ = b.ExtractByIndex(k)
 			k--
 		}
 	}
