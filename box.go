@@ -85,7 +85,7 @@ func (b *box) RemoveAllCircles() error {
 	err := errors.New("circles are not exist in the list")
 	for k, s := range b.shapes {
 		i = s
-		_, ok := i.(Circle)
+		_, ok := i.(&Circle)
 		fmt.Println(s, ok, k)
 		if ok {
 			_, err = b.ExtractByIndex(k)
