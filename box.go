@@ -1,6 +1,9 @@
 package golang_united_school_homework
 
-import "errors"
+import ( 
+	"errors"
+	"fmt"
+)
 
 // box contains list of shapes and able to perform operations on them
 type box struct {
@@ -83,8 +86,10 @@ func (b *box) RemoveAllCircles() error {
 	for k, s := range b.shapes {
 		i = s
 		_, ok := i.(Circle)
+		fmt.Println(s, ok, k)
 		if ok {
 			_, err = b.ExtractByIndex(k)
+			fmt.Println(err)
 			k--
 		}
 	}
