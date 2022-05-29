@@ -84,7 +84,7 @@ func (b *box) RemoveAllCircles() error {
 		i = s
 		_, ok := i.(Circle)
 		if ok {
-			_, _ = b.ExtractByIndex(k)
+			_, err = b.ExtractByIndex(k)
 			k--
 		}
 	}
