@@ -2,7 +2,6 @@ package golang_united_school_homework
 
 import ( 
 	"errors"
-	"fmt"
 )
 
 // box contains list of shapes and able to perform operations on them
